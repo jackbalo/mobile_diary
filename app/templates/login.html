@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block main %}
+<!-- Hero Section: Facebook-style two-column layout for non-logged in users -->
+<div class="row align-items-center mb-5">
+    <!-- Left Column: Branding & Marketing Message -->
+    <div class="col-md-7">
+        <h3 class="display-3 fw-bold">
+            <span class="text-primary">🎂 Birthday</span><br>
+            <span class="text-danger">📔 Diaries</span>
+        </h3>
+    </div>
+    <!-- Right Column: Login Form -->
+    <div class="col-md-5">
+        <div class="card p-4 shadow-sm">
+            <p class="lead text-center">
+                Log in to your Birthday Diary
+            </p>
+            <form action="/login" method="post">
+                <div class="mb-3">
+                    <input type="text" name="email" placeholder="Email or phone number" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" name="password" placeholder="Password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 fw-bold">Log In</button>
+            </form>
+            <div class="text-center mt-3">
+                <a href="#" class="text-decoration-none">Forgotten password?</a>
+            </div>
+            <div class="d-flex align-items-center my-3">
+                <hr class="flex-grow-1">
+                <span class="mx-2">or</span>
+                <hr class="flex-grow-1">
+            </div>
+            <div class="text-center">
+                <a href="/register" class="btn btn-success fw-bold">Create New Account</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

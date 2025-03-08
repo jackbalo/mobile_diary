@@ -1,0 +1,69 @@
+#:import MDDataTable kivymd.uix.datatables.MDDataTable
+
+<HomeScreen>:
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: "15dp"
+        spacing: "15dp"
+        
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint_y: 0.3
+            
+            MDLabel:
+                text: "Today's"
+                halign: "center"
+                font_style: "H3"
+                theme_text_color: "Primary"
+            
+            MDLabel:
+                text: "Birthdays"
+                halign: "center"
+                font_style: "H3"
+                theme_text_color: "Error"
+        
+        MDScrollView:
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: "20dp"
+                spacing: "10dp"
+                #size_hint_y: None
+                #height: self.minimum_height
+                
+                MDCard:
+                    orientation: 'vertical'
+                    padding: "15dp"
+                    spacing: "8dp"
+                    size_hint: 0.8, None
+                    height: self.minimum_height
+                    pos_hint: {"center_x": 0.5}
+                    elevation: 2
+                    
+                    MDList:
+                        id: birthday_list
+                        spacing: "10dp"
+                        padding: "10dp"
+                        size_hint_y: None
+                        height: self.minimum_height
+        
+        MDBottomNavigation:
+            panel_color: app.theme_cls.primary_color
+            text_color_active: "white"
+            
+            MDBottomNavigationItem:
+                name: 'birthdays'
+                text: 'Birthdays'
+                icon: 'calendar-heart'
+                on_tab_press: root.view_all_birthdays()
+                
+            MDBottomNavigationItem:
+                name: 'add'
+                text: 'Add New'
+                icon: 'plus-circle'
+                on_tab_press: root.add_birthday()
+                
+            MDBottomNavigationItem:
+                name: 'profile'
+                text: 'Profile'
+                icon: 'account'
+                on_tab_press: root.go_to_profile()

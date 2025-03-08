@@ -1,0 +1,69 @@
+<ProfileScreen>:
+    name_field: name
+    username_field: username
+    email_field: email
+    phone_field: phone
+    dob_field: dob
+    error_label: error_label
+    
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: "20dp"
+        spacing: "20dp"
+        
+        MDCard:
+            orientation: 'vertical'
+            padding: "15dp"
+            spacing: "10dp"
+            size_hint: 0.9, None
+            height: self.minimum_height
+            pos_hint: {"center_x": 0.5}
+            elevation: 2
+            
+            MDLabel:
+                text: "My Profile"
+                halign: "center"
+                font_style: "H5"
+                theme_text_color: "Primary"
+                
+            MDTextField:
+                id: name
+                hint_text: "Full Name"
+                helper_text: "Your full name"
+                helper_text_mode: "on_focus"
+                
+            MDTextField:
+                id: username
+                hint_text: "Username"
+                helper_text: "Your username"
+                helper_text_mode: "on_focus"
+                
+            MDTextField:
+                id: email
+                hint_text: "Email"
+                helper_text: "Your email address"
+                helper_text_mode: "on_focus"
+                
+            MDTextField:
+                id: phone
+                hint_text: "Phone"
+                helper_text: "Your phone number"
+                helper_text_mode: "on_focus"
+                
+            MDTextField:
+                id: dob
+                hint_text: "Date of Birth"
+                helper_text: "Your birth date"
+                helper_text_mode: "on_focus"
+                
+            MDLabel:
+                id: error_label
+                text: ""
+                theme_text_color: "Error"
+                halign: "center"
+                
+            MDRaisedButton:
+                text: "Save Changes"
+                on_release: root.update_profile()
+                size_hint_x: 1
+                md_bg_color: app.theme_cls.primary_color

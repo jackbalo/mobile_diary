@@ -1,0 +1,148 @@
+#:import MDBoxLayout kivymd.uix.boxlayout.MDBoxLayout
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDTextField kivymd.uix.textfield.MDTextField
+#:import MDRaisedButton kivymd.uix.button.MDRaisedButton
+#:import MDTextButton kivymd.uix.button.MDTextButton
+#:import MDScrollView kivymd.uix.scrollview.MDScrollView
+
+<RegisterScreen>:
+    username_field: username
+    name_field: name
+    email_field: email
+    phone_field: phone
+    dob_field: dob
+    password_field: password
+    confirmation_field: confirmation
+    error_label: error_label
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: "15dp"
+        spacing: "15dp"
+        
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint_y: 0.2
+            
+            MDLabel:
+                text: "Create"
+                icon: "cake-variant"
+                halign: "center"
+                font_style: "H3"
+                theme_text_color: "Primary"
+                
+            MDLabel:
+                text: "Account"
+                icon: "book-open-variant"
+                halign: "center"
+                font_style: "H3" 
+                theme_text_color: "Error"
+        
+        MDScrollView:
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: "20dp"
+                spacing: "10dp"
+                size_hint_y: None
+                height: self.minimum_height
+                
+                MDCard:
+                    orientation: 'vertical'
+                    padding: "15dp"
+                    spacing: "8dp"
+                    size_hint: 0.8, None
+                    height: self.minimum_height
+                    pos_hint: {"center_x": 0.5}
+                    elevation: 2
+                    
+                    MDTextField:
+                        id: name
+                        hint_text: "Full Name"
+                        mode: "rectangle"
+                        size_hint_x: 1
+                        size_hint_y: None
+                        height: "40dp"
+                        
+                    MDTextField:
+                        id: username
+                        hint_text: "Username"
+                        mode: "rectangle"
+                        size_hint_x: 1
+                        size_hint_y: None
+                        height: "40dp"
+                        
+                    MDTextField:
+                        id: email
+                        hint_text: "Email"
+                        mode: "rectangle"
+                        size_hint_x: 1
+                        size_hint_y: None
+                        height: "40dp"
+                        
+                    MDTextField:
+                        id: phone
+                        hint_text: "Phone"
+                        mode: "rectangle"
+                        size_hint_x: 1
+                        size_hint_y: None
+                        height: "40dp"
+                        
+                    MDTextField:
+                        id: dob
+                        hint_text: "Date of Birth (YYYY-MM-DD)"
+                        mode: "rectangle"
+                        size_hint_x: 1
+                        size_hint_y: None
+                        height: "40dp"
+                        
+                    MDTextField:
+                        id: password
+                        hint_text: "Password"
+                        password: True
+                        mode: "rectangle"
+                        size_hint_x: 1
+                        size_hint_y: None
+                        height: "40dp"
+                        
+                    MDTextField:
+                        id: confirmation
+                        hint_text: "Confirm Password"
+                        password: True
+                        mode: "rectangle"
+                        size_hint_x: 1
+                        size_hint_y: None
+                        height: "40dp"
+                        
+                    MDLabel:
+                        id: error_label
+                        text: ""
+                        theme_text_color: "Error"
+                        halign: "center"
+                        
+                    MDSpinner:
+                        id: register_spinner
+                        size_hint: None, None
+                        size: dp(46), dp(46)
+                        pos_hint: {'center_x': .5}
+                        active: False
+                        
+                    MDRaisedButton:
+                        text: "Register"
+                        on_release: root.register()
+                        size_hint_x: 1
+                        md_bg_color: app.theme_cls.primary_color
+                        
+                    Widget:
+                        size_hint_y: None
+                        height: "20dp"
+                        
+                    MDRaisedButton:
+                        text: "Sign in with Google"
+                        on_release: root.google_signin()
+                        size_hint_x: 1
+                        md_bg_color: (0.29, 0.50, 0.96, 1)
+                        
+                    MDTextButton:
+                        text: "Already have an account? Login"
+                        on_release: root.go_to_login()
+                        size_hint_x: 1

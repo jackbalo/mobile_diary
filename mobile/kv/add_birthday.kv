@@ -1,0 +1,98 @@
+#:import MDBoxLayout kivymd.uix.boxlayout.MDBoxLayout
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDTextField kivymd.uix.textfield.MDTextField
+#:import MDRaisedButton kivymd.uix.button.MDRaisedButton
+#:import MDTextButton kivymd.uix.button.MDTextButton
+#:import MDScrollView kivymd.uix.scrollview.MDScrollView
+
+<AddBirthdayScreen>:
+    name_field: name
+    email_field: email
+    phone_field: phone
+    dob_field: dob
+    error_label: error_label
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: "15dp"
+        spacing: "15dp"
+        
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint_y: 0.2
+            
+            MDLabel:
+                text: "Add New Birthday"
+                halign: "center"
+                font_style: "H4"
+                theme_text_color: "Primary"
+
+        MDScrollView:
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: "20dp"
+                spacing: "10dp"
+                size_hint_y: None
+                height: self.minimum_height
+
+                MDTextField:
+                    id: name
+                    hint_text: "Full Name"
+                    mode: "rectangle"
+                    size_hint_x: 0.8
+                    pos_hint: {"center_x": 0.5}
+
+                MDTextField:
+                    id: email
+                    hint_text: "Email"
+                    mode: "rectangle"
+                    size_hint_x: 0.8
+                    pos_hint: {"center_x": 0.5}
+
+                MDTextField:
+                    id: phone
+                    hint_text: "Phone"
+                    mode: "rectangle"
+                    size_hint_x: 0.8
+                    pos_hint: {"center_x": 0.5}
+
+                MDTextField:
+                    id: dob
+                    hint_text: "Birthdate (YYYY-MM-DD)"
+                    helper_text: "Format: 2000-12-31"
+                    helper_text_mode: "persistent"
+                    mode: "rectangle"
+                    size_hint_x: 0.8
+                    pos_hint: {"center_x": 0.5}
+
+                MDLabel:
+                    id: error_label
+                    text: ""
+                    theme_text_color: "Error"
+                    halign: "center"
+                    size_hint_x: 0.8
+                    pos_hint: {"center_x": 0.5}
+
+                MDSpinner:
+                    id: addbirthday_spinner
+                    size_hint: None, None
+                    size: dp(46), dp(46)
+                    pos_hint: {'center_x': .5}
+                    active: False
+
+                BoxLayout:
+                    orientation: 'horizontal'
+                    size_hint_x: 0.8
+                    pos_hint: {"center_x": 0.5}
+                    spacing: "10dp"
+
+                    MDRaisedButton:
+                        text: "Save"
+                        on_release: root.save_birthday()
+                        size_hint_x: 0.5
+
+                    MDRaisedButton:
+                        text: "Cancel"
+                        on_release: root.cancel()
+                        size_hint_x: 0.5
+                        md_bg_color: app.theme_cls.error_color

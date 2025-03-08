@@ -1,0 +1,89 @@
+#:import MDBoxLayout kivymd.uix.boxlayout.MDBoxLayout
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDTextField kivymd.uix.textfield.MDTextField
+#:import MDRaisedButton kivymd.uix.button.MDRaisedButton
+#:import MDTextButton kivymd.uix.button.MDTextButton
+#:import MDCard kivymd.uix.card.MDCard
+
+<LoginScreen>:
+    username: username
+    password: password
+    error_label: error_label
+    login_spinner: login_spinner
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: "20dp"
+        spacing: "20dp"
+        
+        MDBoxLayout:
+            orientation: 'vertical'
+            size_hint_y: 0.4
+            
+            MDLabel:
+                text: "Birthday"
+                icon: "cake-variant"
+                halign: "center"
+                font_style: "H3"
+                theme_text_color: "Primary"
+                
+            MDLabel:
+                text: "Diaries"
+                icon: "book-open-variant"
+                halign: "center"
+                font_style: "H3" 
+                theme_text_color: "Error"
+        
+        MDCard:
+            orientation: 'vertical'
+            padding: "20dp"
+            spacing: "10dp"
+            size_hint: 0.8, None
+            height: self.minimum_height
+            pos_hint: {"center_x": 0.5}
+            elevation: 2
+            
+            MDTextField:
+                id: username
+                hint_text: "Username"
+                mode: "rectangle"
+                
+            MDTextField:
+                id: password
+                hint_text: "Password"
+                password: True
+                mode: "rectangle"
+                
+            MDLabel:
+                id: error_label
+                text: ""
+                theme_text_color: "Error"
+                halign: "center"
+                
+            MDSpinner:
+                id: login_spinner
+                size_hint: None, None
+                size: dp(46), dp(46)
+                pos_hint: {'center_x': .5}
+                active: False
+                
+            MDRaisedButton:
+                text: "Log In"
+                on_release: root.login()
+                size_hint_x: 1
+                md_bg_color: app.theme_cls.primary_color
+                
+            MDTextButton:
+                text: "Forgotten password?"
+                on_release: root.forgot_password()
+                size_hint_x: 1
+                
+            Widget:
+                size_hint_y: None
+                height: "20dp"
+                
+            MDRaisedButton:
+                text: "Create New Account"
+                on_release: root.go_to_register()
+                size_hint_x: 1
+                md_bg_color: app.theme_cls.accent_color

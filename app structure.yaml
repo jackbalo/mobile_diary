@@ -1,0 +1,30 @@
+/
+|-- __init__.py
+|-- .gitignore
+|-- config.py
+|-- shared/
+|   |-- helpers.py
+|   |-- models.py
+|   |-- database.py
+|-- mobile/
+|   |-- main.py
+|   |-- screens/
+|   |   |-- login_screen.py
+|   |   |-- register_screen.py
+|   |   |-- diary_screen.py
+|   |   |-- profile_screen.py
+|   |-- kv/
+|   |   |-- login.kv
+|   |   |-- diary.kv
+|   |   |-- profile.kv
+|   |-- utils/
+|   |   |-- api_client.py
+|   |   |-- session_manager.py
+|   |-- assets/
+|       |-- images/
+|       |-- fonts/
+|-- instance/
+|   |-- project.db
+|-- requirements.txt
+|-- README.md
+|-- run.py

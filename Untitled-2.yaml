@@ -1,0 +1,42 @@
+/
+|-- __init__.py
+|-- .gitignore
+|-- config.py
+|-- helpers.py
+|-- mobile_routes.py
+|-- models.py
+|-- README.md
+|-- routes.py
+|-- static/
+|   |-- bd.jpg
+|   |-- favicon.ico
+|   |-- file-5ATLMwmHxZPtK1uKaWgWfU.webp
+|   |-- file-8ULhkGgU9cdcs1mXYhv23W.webp
+|   |-- I_heart_validator.png
+|   |-- logo.jpg
+|   |-- styles.css
+|-- templates/
+|   |-- Add_password.html
+|   |-- add.html
+|   |-- apology.html
+|   |-- bb.sql
+|   |-- birthdays.html
+|   |-- edit.html
+|   |-- home.html
+|   |-- index.html
+|   |-- layout.html
+|   |-- login.html
+|   |-- new.html
+|   |-- otp_verification.html
+|   |-- original_layout.html
+|   |-- password_reset.html
+|   |-- profile.html
+|   |-- register.html
+|   |-- trial.html
+|   |-- update_profile.html
+instance/
+|-- project.db
+mobile.py
+README.md
+requirements.txt
+run.py

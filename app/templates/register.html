@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+<div class="row align-items-center mb-5"> 
+    <div class="col-md-7">
+    <h3 class="display-3 fw-bold">
+          <span class="text-primary">🎂Birthday</span><br><span class="text-danger"> 📔Diaries</span>
+      </h3>
+    </div>
+    <div class="col-md-5">
+    <div class="card p-4 shadow-sm">
+    <form action="/register" method="post" class="p-4 mx-auto" style="max-width: 400px;">
+    <div class="mb-3">
+        <input autocomplete="off" class="form-control" name="name" placeholder="Name" type="text" required>
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" class="form-control" name="username" placeholder="Username" type="text" required>
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" class="form-control" name="dob" placeholder="Date of Birth" type="date" required>
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" class="form-control" name="email" placeholder="Email" type="email" required>
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" class="form-control" name="phone" placeholder="Phone number" type="text" required>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" name="password" placeholder="Password" type="password" required>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password" required>
+    </div>
+    <div class="d-grid mb-3">
+        <button class="btn btn-success" type="submit">Register</button>
+    </div>
+    <div class="d-grid">
+        <a class="btn btn-primary text-white" href="{{ url_for('main.googleLogin') }}">
+            <img src="/static/logo.jpg" alt="Google logo" style="width:20px; margin-right:10px;"> Sign in with Google
+        </a>
+    </div>
+</form>
+</div>
+</div>
+</div>
+
+<script>
+        flatpickr("input[name='dob']", {
+            dateFormat: "Y-m-d",  
+            maxDate: "today", 
+        });
+</script>
+{% endblock %}

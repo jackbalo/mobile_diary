@@ -1,0 +1,100 @@
+<OTPVerificationScreen>:
+    otp_input: otp
+    error_label: error_label
+    countdown_label: countdown_label
+    resend_button: resend_button
+
+    MDScrollView:
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: "20dp"
+            spacing: "20dp"
+            size_hint_y: None
+            height: self.minimum_height
+            
+            Widget:
+                size_hint_y: None
+                height: "40dp"
+                
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: "200dp"
+                spacing: "0dp"
+                
+                MDLabel:
+                    text: "Email"
+                    halign: "center"
+                    font_style: "H3"
+                    theme_text_color: "Primary"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    
+                MDLabel:
+                    text: "Verification"
+                    halign: "center"
+                    font_style: "H3"
+                    theme_text_color: "Error"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+            Widget:
+                size_hint_y: None
+                height: "40dp"
+
+            MDCard:
+                orientation: 'vertical'
+                padding: "20dp"
+                spacing: "10dp"
+                size_hint: 0.9, None
+                height: self.minimum_height
+                pos_hint: {"center_x": 0.5}
+                elevation: 2
+
+                MDLabel:
+                    text: "Enter the OTP sent to your email"
+                    halign: "center"
+                    theme_text_color: "Secondary"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                
+                MDTextField:
+                    id: otp
+                    hint_text: "Enter OTP"
+                    mode: "rectangle"
+                    size_hint_x: 0.8
+                    pos_hint: {"center_x": 0.5}
+                    
+                MDLabel:
+                    id: error_label
+                    text: ""
+                    theme_text_color: "Error"
+                    halign: "center"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    
+                MDLabel:
+                    id: countdown_label
+                    text: ""
+                    halign: "center"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                
+            MDRaisedButton:
+                text: "VERIFY OTP"
+                on_release: root.verify_otp()
+                size_hint_x: 0.8
+                pos_hint: {"center_x": 0.5}
+                md_bg_color: app.theme_cls.primary_color
+                size_hint_y: None
+                height: "48dp"
+                
+            MDRaisedButton:
+                id: resend_button
+                text: "RESEND OTP"
+                on_release: root.resend_otp()
+                size_hint_x: 0.8
+                pos_hint: {"center_x": 0.5}
+                md_bg_color: app.theme_cls.accent_color
+                size_hint_y: None
+                height: "48dp"

@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.navbar-brand {
+    font-size: xx-large;
+}
+
+.navbar-brand .blue {
+    color: #007bff;
+}
+.navbar-brand .red {
+    color: #dc3545;
+}
+.navbar-brand .yellow {
+    color: #ffc107;
+}
+.navbar-brand .green {
+    color: #28a745;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+th {
+    color: white;
+    text-transform: uppercase;
+}
+th:nth-child(2) {
+    background-color: #007bff; 
+}
+th:nth-child(1) {
+    background-color: #dc3545;
+}
+th:nth-child(3) {
+    background-color: #ffc107;
+}
+th:nth-child(4) {
+    background-color: #28a745;
+}
+th:nth-child(5) {
+    background-color: #343a40;
+}
+th:nth-child(6) {
+    background-color: #007bff; 
+}
+th:nth-child(7) {
+    background-color: #dc3545;
+}
+th:nth-child(8) {
+    background-color: #ffc107;
+}
+th:nth-child(9) {
+    background-color: #28a745;
+}
+th:nth-child(10) {
+    background-color: #343a40;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+td {
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.stock {
+    color: #010101;
+    font-size: 80px;
+    margin-bottom: 5px;
+}
+
+.select {
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ffc107;
+}
+
+.select:focus {
+    box-shadow: 0 0 0 0.2rem #28a745;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Custom styles */
+.navbar-custom {
+    background-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand-custom {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.footer-custom {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.main-content {
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+}
+
+.alert-custom {
+    margin-top: 1rem;
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+/* Sidebar styles */
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.sidebar .nav-link {
+    color: #333;
+}

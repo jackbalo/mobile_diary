@@ -1,0 +1,81 @@
+#:import MDBoxLayout kivymd.uix.boxlayout.MDBoxLayout
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDRaisedButton kivymd.uix.button.MDRaisedButton
+#:import MDTextButton kivymd.uix.button.MDTextButton
+#:import MDScrollView kivymd.uix.scrollview.MDScrollView
+
+<IndexScreen>:
+    MDScrollView:
+        MDBoxLayout:
+            orientation: 'vertical'
+            padding: "20dp"
+            spacing: "20dp"
+            size_hint_y: None
+            height: self.minimum_height
+            
+            Widget:
+                size_hint_y: None
+                height: "40dp"
+                
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: "200dp"
+                spacing: "0dp"
+                
+                MDLabel:
+                    text: "Birthday"
+                    icon:"cake-variant"
+                    halign: "center"
+                    font_style: "H3"
+                    theme_text_color: "Primary"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    
+                MDLabel:
+                    text: "Diaries"
+                    icon:"book-open-variant"
+                    halign: "center"
+                    font_style: "H3"
+                    theme_text_color: "Error"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+
+            Widget:
+                size_hint_y: None
+                height: "40dp"
+
+            MDRaisedButton:
+                text: "CREATE NEW ACCOUNT"
+                on_release: root.go_to_register()
+                size_hint_x: 0.8
+                pos_hint: {"center_x": 0.5}
+                md_bg_color: app.theme_cls.accent_color
+                size_hint_y: None
+                height: "48dp"
+                
+            MDRaisedButton:
+                text: "LOG IN"
+                on_release: root.go_to_login()
+                size_hint_x: 0.8
+                pos_hint: {"center_x": 0.5}
+                md_bg_color: app.theme_cls.primary_color
+                size_hint_y: None
+                height: "48dp"
+
+            MDRaisedButton:
+                text: "SIGN IN WITH GOOGLE"
+                on_release: root.google_signin()
+                size_hint_x: 0.8
+                pos_hint: {"center_x": 0.5}
+                md_bg_color: (0.29, 0.50, 0.96, 1)
+                size_hint_y: None
+                height: "48dp"
+
+            MDTextButton:
+                text: "Terms and Services Agreement"
+                on_release: root.show_terms()
+                size_hint_x: 0.8
+                pos_hint: {"center_x": 0.5}
+                size_hint_y: None
+                height: "48dp"
