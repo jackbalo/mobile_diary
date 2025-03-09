@@ -79,8 +79,7 @@ class APIClient:
         try:
             response = self.session.post(url, json=birthday_data)
             if response.status_code == 201:
-                return True
-            return False
+                return response.json()
         except requests.RequestException:
             return False
 
@@ -90,7 +89,8 @@ class APIClient:
             response = self.session.post(url, json=profile_data)
             return response.status_code == 200
         except requests.RequestException:
-            return False
+            return {"error": str(e), "success": False}
+
 
     def search_birthdays(self, name):
         url = urljoin(self.base_url, "/api/search")
